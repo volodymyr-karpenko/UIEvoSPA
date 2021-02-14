@@ -1,0 +1,89 @@
+﻿/*Media
+----------------------------------------------------------------------------------------------------*/
+/*Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+.postDetailPartOne-appear,
+.postDetailPartOne-enter,
+.postDetailPartOne-exit-done {
+    opacity: 0;
+    transform: translateY(15rem);
+}
+
+.postDetailPartOne-appear-active,
+.postDetailPartOne-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.postDetailPartOne-appear-done,
+.postDetailPartOne-enter-done,
+.postDetailPartOne-exit {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
+.postDetailPartOne-exit-active {
+    opacity: 0;
+    transform: translateY(15rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+/*------------------------------ postDetailPartTwo*/
+
+.postDetailPartTwo-appear,
+.postDetailPartTwo-enter,
+.postDetailPartTwo-exit-done {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+.postDetailPartTwo-appear-active,
+.postDetailPartTwo-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.6s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+.postDetailPartTwo-appear-done,
+.postDetailPartTwo-enter-done,
+.postDetailPartTwo-exit {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
+.postDetailPartTwo-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.6s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

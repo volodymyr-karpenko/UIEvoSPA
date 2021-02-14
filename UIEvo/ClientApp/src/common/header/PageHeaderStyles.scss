@@ -1,0 +1,239 @@
+﻿/*Media
+----------------------------------------------------------------------------------------------------*/
+/*Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+.header-appear,
+.header-enter {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+.header-appear-active,
+.header-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.9s;
+    transition-timing-function: ease-out;
+}
+
+.header-appear-done,
+.header-enter-done,
+.header-exit {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
+.header-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.9s;
+    transition-timing-function: ease-out;
+}
+
+.header-exit-done {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+/*------------------------------ underline*/
+
+.underline-appear,
+.underline-enter {
+    width: 0;
+    height: 1px;
+    border: none;
+    background-color: #ff502f;
+}
+
+.underline-appear-active,
+.underline-enter-active {
+    width: 70px;
+    transition-property: all;
+    transition-delay: 1s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.underline-appear-done,
+.underline-enter-done,
+.underline-exit {
+    width: 70px;
+    height: 1px;
+    border: none;
+    background-color: #ff502f;
+}
+
+.underline-exit-active {
+    width: 0;
+    transition-property: all;
+    transition-delay: 1s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.underline-exit-done {
+    width: 0;
+}
+
+/*------------------------------ arrowPartOne*/
+
+.arrowPartOne-appear,
+.arrowPartOne-enter {
+    width: 3px;
+    height: 0;
+    border: none;
+    background-color: #a0c334;
+}
+
+.arrowPartOne-appear-active,
+.arrowPartOne-enter-active {
+    height: 24px;
+    transition-property: all;
+    transition-delay: 1.3s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartOne-appear-done,
+.arrowPartOne-enter-done,
+.arrowPartOne-exit {
+    width: 3px;
+    height: 24px;
+    border: none;
+    background-color: #a0c334;
+}
+
+.arrowPartOne-exit-active {
+    height: 0;
+    transition-property: all;
+    transition-delay: 1.3s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartOne-exit-done {
+    height: 0;
+}
+
+/*------------------------------ arrowPartTwo*/
+
+.arrowPartTwo-appear,
+.arrowPartTwo-enter {
+    width: 0;
+    height: 3px;
+    border: none;
+    background-color: #a0c334;
+    transform: translate(-11.2px, -6.8px) rotate(45deg);
+}
+
+.arrowPartTwo-appear-active,
+.arrowPartTwo-enter-active {
+    width: 16px;
+    transition-property: all;
+    transition-delay: 1.6s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartTwo-appear-done,
+.arrowPartTwo-enter-done,
+.arrowPartTwo-exit {
+    width: 16px;
+    height: 3px;
+    border: none;
+    background-color: #a0c334;
+    transform: translate(-11.2px, -6.8px) rotate(45deg);
+}
+
+.arrowPartTwo-exit-active {
+    width: 0;
+    transition-property: all;
+    transition-delay: 1.6s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartTwo-exit-done {
+    width: 0;
+}
+
+/*------------------------------ arrowPartThree*/
+
+.arrowPartThree-appear,
+.arrowPartThree-enter {
+    width: 0;
+    height: 3px;
+    border: none;
+    background-color: #a0c334;
+    transform: translate(-1.9px, -9.8px) rotate(135deg);
+}
+
+.arrowPartThree-appear-active,
+.arrowPartThree-enter-active {
+    width: 16px;
+    transition-property: all;
+    transition-delay: 1.9s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartThree-appear-done,
+.arrowPartThree-enter-done,
+.arrowPartThree-exit {
+    width: 16px;
+    height: 3px;
+    border: none;
+    background-color: #a0c334;
+    transform: translate(-1.9px, -9.8px) rotate(135deg);
+}
+
+.arrowPartThree-exit-active {
+    width: 0;
+    transition-property: all;
+    transition-delay: 1.9s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.arrowPartThree-exit-done {
+    width: 0;
+}
+
+/*------------------------------ arrow-container*/
+
+.arrow-container {
+    width: 20px;
+    position: relative;
+    top: -10px;
+
+    transition: {
+        property: top;
+        duration: 0.5s;
+        timing-function: ease-out;
+    }
+
+    &.down {
+        top: 10px;
+    }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

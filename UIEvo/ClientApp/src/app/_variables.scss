@@ -1,0 +1,55 @@
+﻿/*Colors*/
+$primaryDarkColor: #233567;
+$primaryAccentColor: #ff502f;
+$secondaryAccentColor: #a0c334;
+$detailAccentColor: #333366;
+$lightTextColor: #ffffff;
+$darkTextColor: #233567;
+$navTextColor: #ffffff;
+$navbarBgColor: #333366;
+
+@function PixelsToRem($baseSizeInPixels) {
+    $result: ($baseSizeInPixels / 16) * 100;
+    $result: round($result);
+    $result: ($result / 100) * 1rem;
+    @return $result;
+}
+
+@mixin fs($tiny, $small, $medium, $large, $huge) {
+    .fs-tiny {
+        font-size: PixelsToRem($tiny) !important;
+    }
+
+    .fs-small {
+        font-size: PixelsToRem($small) !important;
+    }
+
+    .fs-medium {
+        font-size: PixelsToRem($medium) !important;
+    }
+
+    .fs-large {
+        font-size: PixelsToRem($large) !important;
+    }
+
+    .fs-huge {
+        font-size: PixelsToRem($huge) !important;
+    }
+}
+
+@mixin fadeUp($YStart, $YFinish, $delay, $duration) {
+    opacity: 0;
+    transform: translateY($YStart);
+
+    transition: {
+        property: all;
+        delay: $delay;
+        duration: $duration;
+        timing-function: ease-out;
+    }
+
+    &.fade-in {
+        transform: translateY($YFinish);
+        opacity: 1;
+    }
+}

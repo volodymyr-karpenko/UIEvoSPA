@@ -1,0 +1,166 @@
+﻿@import "../../app/_variables.scss";
+
+/*Media
+----------------------------------------------------------------------------------------------------*/
+/*Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+.navigationPartOne-appear,
+.navigationPartTwo-appear,
+.navigationPartThree-appear,
+.navigationPartFour-appear,
+.navigationPartFive-appear,
+.navigationPartOne-enter,
+.navigationPartTwo-enter,
+.navigationPartThree-enter,
+.navigationPartFour-enter,
+.navigationPartFive-enter,
+.navigationPartOne-exit-done,
+.navigationPartTwo-exit-done,
+.navigationPartThree-exit-done,
+.navigationPartFour-exit-done,
+.navigationPartFive-exit-done {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+.navigationPartOne-appear-active,
+.navigationPartOne-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartTwo-appear-active,
+.navigationPartTwo-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartThree-appear-active,
+.navigationPartThree-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.3s;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartFour-appear-active,
+.navigationPartFour-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.4s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartFive-appear-active,
+.navigationPartFive-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.5s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartOne-appear-done,
+.navigationPartTwo-appear-done,
+.navigationPartThree-appear-done,
+.navigationPartFour-appear-done,
+.navigationPartFive-appear-done,
+.navigationPartOne-enter-done,
+.navigationPartTwo-enter-done,
+.navigationPartThree-enter-done,
+.navigationPartFour-enter-done,
+.navigationPartFive-enter-done,
+.navigationPartOne-exit,
+.navigationPartTwo-exit,
+.navigationPartThree-exit,
+.navigationPartFour-exit,
+.navigationPartFive-exit {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
+.navigationPartOne-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartTwo-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartThree-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.3s;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartFour-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.4s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.navigationPartFive-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.5s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+
+nav {
+    & ul.nav li.nav-item a.nav-link {
+        color: $navTextColor !important;
+
+        &:hover, &:active {
+            color: $primaryAccentColor !important;
+        }
+    }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

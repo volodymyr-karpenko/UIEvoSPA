@@ -1,0 +1,174 @@
+﻿@import "./_variables.scss";
+
+/*Media
+----------------------------------------------------------------------------------------------------*/
+/*Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+html, body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*Uncomment the following expression to inspect elements*/  
+/** {
+    border: 1px solid red !important;
+}*/
+
+a.link,
+a.link:focus,
+a.link:hover,
+a.link:focus:hover,
+a.link.active,
+a.link.active:focus,
+a.link.active:hover,
+a.link.active:focus:hover {
+    color: $primaryAccentColor;
+    text-decoration: none;
+}
+
+.cookie-header-underline {
+    width: 70px;
+    height: 1px;
+    border: none;
+    background-color: $primaryAccentColor;
+}
+
+.txt-light-color {
+    color: $lightTextColor;
+}
+
+.txt-dark-color {
+    color: $darkTextColor;
+}
+
+i.material-icons.md-light {
+    color: $lightTextColor;
+}
+
+i.material-icons.md-accent {
+    color: $primaryAccentColor
+}
+
+button {
+    &,
+    &:focus,
+    &:active {
+        outline: none !important;
+        border: none !important;
+        border-style: none !important;
+        box-shadow: none !important;
+        background: none !important;
+        user-select: none !important;
+    }
+}
+
+.btn_primary {
+    cursor: pointer;
+    background-color: $primaryDarkColor !important;
+    color: $lightTextColor !important;
+}
+
+.btn_secondary {
+    cursor: pointer;
+    background-color: $detailAccentColor !important;
+    color: $lightTextColor !important;
+}
+
+.btn_accent_transparent {
+    cursor: pointer;
+    background-color: transparent !important;
+    color: $primaryAccentColor !important;
+}
+
+
+/*Fonts
+----------------------------------------------------------------------------------------------------*/
+.ff-comfortaa-bold {
+    font-family: Comfortaa-Bold, sans-serif;
+}
+
+.ff-comfortaa-regular {
+    font-family: Comfortaa-Regular, sans-serif;
+}
+
+.ff-comfortaa-thin {
+    font-family: Comfortaa-Thin, sans-serif;
+}
+
+.ff-lobsterTwo-bold {
+    font-family: LobsterTwo-Bold, sans-serif;
+}
+
+.ff-lobsterTwo-boldItalic {
+    font-family: LobsterTwo-BoldItalic, sans-serif;
+}
+
+.ff-lobsterTwo-italic {
+    font-family: LobsterTwo-Italic, sans-serif;
+}
+
+.ff-lobsterTwo-regular {
+    font-family: LobsterTwo-Regular, sans-serif;
+}
+
+.ff-quicksand-dash {
+    font-family: Quicksand-Dash, sans-serif;
+}
+
+.ff-sportrop {
+    font-family: Sportrop, sans-serif;
+}
+
+.ff-font-awesome-solid {
+    font-family: FontAwesomeSolid, sans-serif;
+}
+
+.ff-font-awesome-brands {
+    font-family: FontAwesomeBrands, sans-serif;
+}
+
+
+/*Utils
+----------------------------------------------------------------------------------------------------*/
+.bg_cover {
+    width: 100%;
+    background: center no-repeat;
+    background-size: cover;
+}
+
+.bg_contain {
+    width: 100%;
+    background: center no-repeat;
+    background-size: contain;
+}
+
+@include fs(10, 12, 14, 23, 26);
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    @include fs(10, 14, 16, 26, 30);
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    @include fs(11, 14, 16, 26, 30);
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    @include fs(12, 16, 18, 28, 32);
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    @include fs(14, 16, 20, 36, 48);
+}

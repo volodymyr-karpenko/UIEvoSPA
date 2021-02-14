@@ -1,0 +1,178 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
+	<PackageReference Include="MailKit" Version="2.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\CookieModal.tsx" />
+    <None Remove="ClientApp\src\app\IAppState.ts" />
+    <None Remove="ClientApp\src\app\NavigationBar.tsx" />
+    <None Remove="ClientApp\src\app\NoMatch.tsx" />
+    <None Remove="ClientApp\src\features\admin\AddEditPortfolioForm.tsx" />
+    <None Remove="ClientApp\src\features\admin\AdminPage.tsx" />
+    <None Remove="ClientApp\src\features\admin\AdminSlice.ts" />
+    <None Remove="ClientApp\src\features\admin\IAddEditPortfolioPost.ts" />
+    <None Remove="ClientApp\src\features\admin\IAdminState.ts" />
+    <None Remove="ClientApp\src\features\admin\ILoginCredentials.ts" />
+    <None Remove="ClientApp\src\features\admin\LoginCredentials.ts" />
+    <None Remove="ClientApp\src\features\admin\LoginForm.tsx" />
+    <None Remove="ClientApp\src\features\admin\LoginPage.tsx" />
+    <None Remove="ClientApp\src\features\cookie\CookieConsent.tsx" />
+    <None Remove="ClientApp\src\features\navigation\LogoutButton.tsx" />
+    <None Remove="ClientApp\src\features\portfolio\AddEditPortfolioPost.ts" />
+    <None Remove="ClientApp\src\features\about\CertificateCarousel.tsx" />
+    <None Remove="ClientApp\src\features\contact\ContactForm.tsx" />
+    <None Remove="ClientApp\src\features\contact\EmailMessage.ts" />
+    <None Remove="ClientApp\src\features\contact\IEmailMessage.ts" />
+    <None Remove="ClientApp\src\features\cookie\CookieSlice.ts" />
+    <None Remove="ClientApp\src\features\cookie\ICookieState.ts" />
+    <None Remove="ClientApp\src\features\portfolio\PortfolioPage.tsx" />
+    <None Remove="ClientApp\src\services\auth\AuthService.ts" />
+    <None Remove="ClientApp\src\services\auth\AuthServiceContext.ts" />
+    <None Remove="ClientApp\src\services\auth\IAntiForgeryData.ts" />
+    <None Remove="ClientApp\src\services\auth\IAuthService.ts" />
+    <None Remove="ClientApp\src\services\cookie\CookieService.ts" />
+    <None Remove="ClientApp\src\services\cookie\CookieServiceContext.ts" />
+    <None Remove="ClientApp\src\services\cookie\ICookieService.ts" />
+    <None Remove="ClientApp\src\services\data\IDataService.ts" />
+    <None Remove="ClientApp\src\common\IVideoProps.ts" />
+    <None Remove="ClientApp\src\common\header\PageHeader.tsx" />
+    <None Remove="ClientApp\src\common\Video.tsx" />
+    <None Remove="ClientApp\src\features\about\AboutPage.tsx" />
+    <None Remove="ClientApp\src\features\contact\ContactPage.tsx" />
+    <None Remove="ClientApp\src\features\home\TestimonialsCarousel.tsx" />
+    <None Remove="ClientApp\src\features\portfolio\IPortfolioPost.ts" />
+    <None Remove="ClientApp\src\features\portfolio\IPortfolioState.ts" />
+    <None Remove="ClientApp\src\features\portfolio\PortfolioPostCard.tsx" />
+    <None Remove="ClientApp\src\features\portfolio\PortfolioPostDetail.tsx" />
+    <None Remove="ClientApp\src\features\portfolio\PortfolioSlice.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\IAppState.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\AddEditPortfolioForm.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\AdminSlice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\AdminPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\IAddEditPortfolioPost.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\IAdminState.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\LogoutButton.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\AuthService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\AuthServiceContext.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\IAntiForgeryData.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\IAuthCredentials.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\AuthCredentials.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\LoginForm.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\admin\LoginPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\cookie\CookieConsent.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\INavigationState.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\VideoPoster.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\NavigationSlice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\cookie\CookieModal.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\app\Footer.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\cookie\CookieSlice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\cookie\ICookieState.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\NavigationBar.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\app\NoMatch.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\NavigationPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\services\auth\IAuthService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\cookie\CookieService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\cookie\CookieServiceContext.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\cookie\ICookieService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\data\DataServiceContext.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\about\CertificateCarousel.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\contact\ContactForm.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\contact\EmailMessage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\contact\IEmailMessage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\data\IDataService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\data\DataService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\common\header\PageHeader.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\navigation\Video.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\about\AboutPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\contact\ContactPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\home\TestimonialsCarousel.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\IPortfolioPost.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\IPortfolioState.ts" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\PortfolioPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\PortfolioPostCard.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\PortfolioPostDetail.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\features\portfolio\PortfolioSlice.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**; $(SpaRoot)build-ssr\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES2017</TypeScriptTarget>
+    <TypeScriptJSXEmit>Preserve</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>

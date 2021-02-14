@@ -1,0 +1,103 @@
+﻿/*Media
+----------------------------------------------------------------------------------------------------*/
+/*Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+.homePartOne-appear,
+.homePartTwo-appear,
+.homePartThree-appear,
+.homePartOne-enter,
+.homePartTwo-enter,
+.homePartThree-enter,
+.homePartOne-exit-done,
+.homePartTwo-exit-done,
+.homePartThree-exit-done {
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+.homePartOne-appear-active,
+.homePartOne-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.5s;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.homePartTwo-appear-active,
+.homePartTwo-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.7s;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+.homePartThree-appear-active,
+.homePartThree-enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-property: all;
+    transition-delay: 0.9s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+.homePartOne-appear-done,
+.homePartTwo-appear-done,
+.homePartThree-appear-done,
+.homePartOne-enter-done,
+.homePartTwo-enter-done,
+.homePartThree-enter-done,
+.homePartOne-exit,
+.homePartTwo-exit,
+.homePartThree-exit {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
+.homePartOne-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.5s;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.homePartTwo-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.7s;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+.homePartThree-exit-active {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition-property: all;
+    transition-delay: 0.9s;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
