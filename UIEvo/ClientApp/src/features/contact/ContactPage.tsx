@@ -13,8 +13,8 @@ export default class ContactPage extends React.PureComponent {
         this.scrollHandler = this.scrollHandler.bind(this);
     }
 
-    private partOneRef: React.RefObject<Row<"div">> & React.RefObject<HTMLDivElement>;
-    private partTwoRef: React.RefObject<Row<"div">> & React.RefObject<HTMLDivElement>;
+    private partOneRef: React.RefObject<Row> & React.RefObject<HTMLDivElement>;
+    private partTwoRef: React.RefObject<Row> & React.RefObject<HTMLDivElement>;
 
     public componentDidMount() {
         window.addEventListener("scroll", this.scrollHandler);

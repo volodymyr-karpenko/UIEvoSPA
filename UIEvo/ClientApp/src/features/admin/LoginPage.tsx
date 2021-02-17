@@ -13,8 +13,8 @@ export default class LoginPage extends React.PureComponent {
         this.scrollHandler = this.scrollHandler.bind(this);
     }
 
-    private partOneRef: React.RefObject<Col<"div">> & React.RefObject<HTMLDivElement>;
-    private partTwoRef: React.RefObject<Col<"div">> & React.RefObject<HTMLDivElement>;
+    private partOneRef: React.RefObject<typeof Col> & React.RefObject<HTMLDivElement>;
+    private partTwoRef: React.RefObject<typeof Col> & React.RefObject<HTMLDivElement>;
 
     public componentDidMount() {
         window.addEventListener("scroll", this.scrollHandler);

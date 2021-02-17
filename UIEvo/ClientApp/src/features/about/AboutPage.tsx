@@ -14,9 +14,9 @@ export default class AboutPage extends React.PureComponent {
         this.handleScroll = this.handleScroll.bind(this);
     }
 
-    private partOneRef: React.RefObject<Row<"div">> & React.RefObject<HTMLDivElement>;
-    private partTwoRef: React.RefObject<Row<"div">> & React.RefObject<HTMLDivElement>;
-    private partThreeRef: React.RefObject<Row<"div">> & React.RefObject<HTMLDivElement>;
+    private partOneRef: React.RefObject<Row> & React.RefObject<HTMLDivElement>;
+    private partTwoRef: React.RefObject<Row> & React.RefObject<HTMLDivElement>;
+    private partThreeRef: React.RefObject<Row> & React.RefObject<HTMLDivElement>;
 
     public componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);

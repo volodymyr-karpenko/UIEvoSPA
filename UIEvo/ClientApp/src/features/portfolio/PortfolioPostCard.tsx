@@ -16,8 +16,8 @@ export default class PortfolioPostCard extends React.PureComponent<IPortfolioPos
 
     public props: IPortfolioPost;
 
-    private postPartOneRef: React.RefObject<Card<"div">> & React.RefObject<HTMLDivElement>;
-    private postPartTwoRef: React.RefObject<Card<"div">> & React.RefObject<HTMLDivElement>;
+    private postPartOneRef: React.RefObject<Card> & React.RefObject<HTMLDivElement>;
+    private postPartTwoRef: React.RefObject<Card> & React.RefObject<HTMLDivElement>;
 
     public componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
