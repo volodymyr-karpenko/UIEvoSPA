@@ -1,9 +1,9 @@
-﻿using MailKit.Net.Smtp;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MimeKit;
 using System;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using UIEvo.Models;
 using UIEvo.Utils;
@@ -53,58 +53,38 @@ namespace UIEvo.Controllers
                 }
             }
 
-            try
+            MailMessage message = new MailMessage();
+
+            message.Body = $"<h2>Name: {emailMessage.Name}, Email: {emailMessage.Email}</h2><p>{emailMessage.Message}</p>";
+
+            if (emailMessage.Attachment != null)
             {
-                await Task.Factory.StartNew(() =>
+                Attachment data = new Attachment(emailMessage.Attachment.OpenReadStream(), emailMessage.Attachment.FileName, emailMessage.Attachment.ContentType);
+                message.Attachments.Add(data);
+            }
+
+            message.IsBodyHtml = true;
+            message.From = new MailAddress(_appSettings.EmailSenderAddress, _appSettings.EmailSenderName);
+            message.To.Add(new MailAddress(_appSettings.EmailReceiverAddress));
+            message.Subject = _appSettings.EmailSubject;
+
+            using (var client = new SmtpClient(_appSettings.SMTPHost, int.Parse(_appSettings.SMTPPort)))
+            {
+                client.Credentials = new NetworkCredential(_appSettings.SMTPUsername, _appSettings.SMTPPassword);
+                client.EnableSsl = true;
+
+                try
                 {
-                    var message = new MimeMessage();
-                    message.From.Add(new MailboxAddress(_appSettings.EmailSenderName, _appSettings.EmailSenderAddress));
-                    message.To.Add(new MailboxAddress(_appSettings.EmailReceiverName, _appSettings.EmailReceiverAddress));
-                    message.Subject = _appSettings.EmailSubject;
+                    await client.SendMailAsync(message);
+                    return "Message successfully sent!";
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"{nameof(SendEmail)} => FAIL with args: {model.Name} {model.Email} {model.Message} {model.Attachment.FileName} {model.Attachment.ContentType}");
+                }
 
-                    var body = new TextPart("plain")
-                    {
-                        Text = "Name: " + emailMessage.Name + "\r\nEmail: " + emailMessage.Email + "\r\n\r\n\r\n" + emailMessage.Message
-                    };
-
-                    if (emailMessage.Attachment != null)
-                    {
-                        var attachment = new MimePart()
-                        {
-                            Content = new MimeContent(emailMessage.Attachment.OpenReadStream(), ContentEncoding.Default),
-                            ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-                            ContentTransferEncoding = ContentEncoding.Base64,
-                            FileName = emailMessage.Attachment.FileName
-                        };
-
-                        var multipart = new Multipart("mixed");
-                        multipart.Add(body);
-                        multipart.Add(attachment);
-
-                        message.Body = multipart;
-                    }
-                    else
-                    {
-                        message.Body = body;
-                    }
-
-                    using (var client = new SmtpClient())
-                    {
-                        client.Connect("smtp.gmail.com", 587, false);
-                        client.Authenticate(_appSettings.EmailSenderAddress, _appSettings.EmailSenderPassword);
-                        client.Send(message);
-                        client.Disconnect(true);
-                    }
-                });
-
-                return "Message successfully sent!";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"{nameof(SendEmail)} => FAIL with args: {model}");
-            }
-
-            return "Something went wrong. Try again!";
+                return "Something went wrong. Try again!";
+            }            
         }        
     }
 }
