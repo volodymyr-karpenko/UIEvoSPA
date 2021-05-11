@@ -7,7 +7,7 @@
     "formik": "^2.2.6",
     "history": "^4.10.1",
     "jquery": "^3.5.1",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "popper.js": "^1.16.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.5.0",
